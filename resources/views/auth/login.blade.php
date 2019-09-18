@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <head>
 
     <title>How to create captcha code in Laravel 5?</title>
@@ -12,16 +13,18 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 </head>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<div class="container" style="margin-top: 50px">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            
+                <div class="panel-heading">Login</div>
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="panel-body">
+                
 
               <form class="form-horizontal" method="POST" action="{{ route('myCaptcha.post') }}">
 
@@ -30,13 +33,15 @@
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone number') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                            </div>
+                        </div>
                        
                         <div class="form-group row">
-                               </div> label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -45,6 +50,7 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
                             <div class="col-md-6">
 
                           <div class="captcha">
@@ -52,8 +58,8 @@
                           <span>{!! captcha_img() !!}</span>
 
                           <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
-
-                          </div>
+                        </div>
+                      </div>
 
                           <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
 
@@ -95,6 +101,32 @@
                                     </a>
                                 @endif
                             </div>
+
+<script type="text/javascript">
+
+
+$(".btn-refresh").click(function(){
+
+  $.ajax({
+
+     type:'GET',
+
+     url:'/refresh_captcha',
+
+     success:function(data){
+
+        $(".captcha span").html(data.captcha);
+
+     }
+
+  });
+
+});
+
+
+</script>
+
+
                         </div>
                     </form>
                 </div>
@@ -103,4 +135,5 @@
     </div>
 </div>
 @endsection
+
 

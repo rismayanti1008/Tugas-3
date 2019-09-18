@@ -1,4 +1,5 @@
 <?php
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -12,3 +13,4 @@ Auth::routes();
 Route::post('my-captcha', 'HomeController@myCaptchaPost')->name('myCaptcha.post');
 Auth::routes();
 Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
+
