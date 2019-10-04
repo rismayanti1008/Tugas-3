@@ -1,23 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>KategoriaArtikel</title>
-</head>
-<body>
-<table border="1">
-	<tr>
-		<td>id</td>
-		<td>judul</td>
-		<td>isi</td>
-		<td>user_id</td>
-	</tr>
-	@foreach($kategori_artikel as $item)
-	<tr>{
-			<td>{!! $item->id !!}</td>
-			<td>{!! $item->judul !!}</td>
-			<td>{!! $item->isi !!}</td>
-			<td>{!! $item->user_id !!}</td>
-	</tr>
-	@endforeach
-</body>
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+              <div class=card>
+               <div class="card-header">"List Kategori artikel"</div>
+               
+               <div class="card-body">
+<a href="{!! route('berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+<table border="2">
+               	<tr>
+               		<td>id</td>
+               		<td>nama</td>
+               		<td>users id</td>
+               		<td>create</td>
+               		<td>Aksi</td>
+
+               		
+               	</tr>
+               	@foreach($kategori_artikel as $item)
+               	<tr>
+					     <td>{!! $item->id !!}</td>
+					     <td>{!! $item->nama !!}</td>
+					     <td>{!! $item->users_id!!}</td>}
+					     <td>{!! $item->created_at !!}</td>
+					     <td>
+
+				
+
+               	<a href="{!! route('kategori_artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
+               		lihat </a>
+               	</td>
+               </tr>
+               @endforeach
+               		
+           </div>
+        </div>
+    </div>
+ </div>
+ </body>
 </html>
+               
+@endsection

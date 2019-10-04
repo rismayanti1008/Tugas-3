@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class galeri extends Model
 {
     protected $table='galeri';
-    protected $fillable=['id','judul','isi','kategori_berita_id',];
+    protected $fillable=['id','nama','keterangan','path','users_id','kategori_galeri_id'];
 }

@@ -8,5 +8,5 @@ class kategori_pengumuman extends Model
 {
    protected $table="kategori_pengumuman";
 
-   protected $fillable=['users_id','nama'];
+   protected $fillable=['id','nama','users_id'];
 }

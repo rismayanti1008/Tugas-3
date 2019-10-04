@@ -1,6 +1,8 @@
 <!doctype html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,8 +35,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    MENU<span class="caret"></span>
+                                </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                   <a class="nav-link" href="{{ route('kategori_artikel.index') }}">{{ __('Ketegori Artikel') }}</a>
+                                    </a>
+                                    <a class="nav-link" href="{{ route('kategori_berita.index') }}">{{ __('Ketegori Berita') }}</a>
+                                    </a>
+                                     <a class="nav-link" href="{{ route('kategori_galeri.index') }}">{{ __('Ketegori Galeri') }}</a>
+                                    </a>
+                                      <a class="nav-link" href="{{ route('kategori_pengumuman.index') }}">{{ __('Ketegori Pengumuman') }}</a>
+                                    </a>
+                                      <a class="nav-link" href="{{ route('artikel.index') }}">{{ __('Artikel') }}</a>
+                                    </a>
+                                      <a class="nav-link" href="{{ route('berita.index') }}">{{ __('Berita') }}</a>
+                                    </a>
+                                      <a class="nav-link" href="{{ route('galeri.index') }}">{{ __('Galeri') }}</a>
+                                    </a>
+                                      <a class="nav-link" href="{{ route('pengumuman.index') }}">{{ __('Pengumuman') }}</a>
+                                    </a>
+
+
+
+                                </div>
+                            </li>  
                     </ul>
+
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -73,8 +103,15 @@
         </nav>
 
         <main class="py-4">
+
             @yield('content')
         </main>
     </div>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+     @yield('scripts')
+
+        
 </body>
 </html>
