@@ -19,7 +19,11 @@
     <label for="kategori_artikel_id" class="col-md-2 col Form-label text-md-right">{{__('Kategori Artikel')}}</label>
 
     <div class="col-md-10">
+<<<<<<< HEAD
     {!! Form::select('kategori_artikel_id', $Kategori_Artikel, null, ["class"=> "form-control", "required"]) !!}
+=======
+    {!! Form::select('kategori_artikel_id', $kategori_artikel, null, ["class"=> "form-control", "required"]) !!}
+>>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
 
     @error('kategori_artikel_id')
     <span class="invalid-feedback" role="alert">

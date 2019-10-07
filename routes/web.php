@@ -15,13 +15,17 @@ Auth::routes();
 Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
 Auth::routes();
 
+<<<<<<< HEAD
 //route::resourse('kategori_artikel','kategori_artikelController');
 
+=======
+>>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
 
 route::get('/kategori_artikel', 'kategori_artikelController@index')->name('kategori_artikel.index');
 route::get('/kategori_artikel/create','kategori_artikelController@create')->name('kategori_artikel.create');
 route::post('/kategori_artikel','kategori_artikelController@store')->name('kategori_artikel.store');
 route::get('/kategori_artikel/{id}', 'kategori_artikelController@show')->name('kategori_artikel.show');
+<<<<<<< HEAD
 route::get('/kategori_artikel{id}/edit', 'kategori_artikelController@edit')->name('kategori_artikel.edit');
 route::patch('/kategori_artikel{id}', 'kategori_artikelController@update')->name('kategori_artikel.update');
 
@@ -32,6 +36,13 @@ Route::get('/artikel', 'ArtikelController@index')->name('artikel.index');
 Route::get('/artikel/create', 'ArtikelController@create')->name('artikel.create');
 Route::post('/artikel', 'ArtikelController@store')->name('artikel.store');
 Route::get('/artikel/{id}', 'ArtikelController@show')->name('artikel.show');
+=======
+
+Route::get('/artikel', 'artikelController@index')->name('artikel.index');
+Route::get('/artikel/create', 'artikelController@create')->name('artikel.create');
+Route::post('/artikel', 'artikelController@store')->name('artikel.store');
+Route::get('/artikel/{id}', 'artikelController@show')->name('artikel.show');
+>>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
 
 
 route::get('/kategori_berita', 'kategori_beritaController@index')->name('kategori_berita.index');
