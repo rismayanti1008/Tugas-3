@@ -15,11 +15,18 @@ Auth::routes();
 Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
 Auth::routes();
 
+//route::resourse('kategori_artikel','kategori_artikelController');
+
 
 route::get('/kategori_artikel', 'kategori_artikelController@index')->name('kategori_artikel.index');
 route::get('/kategori_artikel/create','kategori_artikelController@create')->name('kategori_artikel.create');
 route::post('/kategori_artikel','kategori_artikelController@store')->name('kategori_artikel.store');
 route::get('/kategori_artikel/{id}', 'kategori_artikelController@show')->name('kategori_artikel.show');
+route::get('/kategori_artikel{id}/edit', 'kategori_artikelController@edit')->name('kategori_artikel.edit');
+route::patch('/kategori_artikel{id}', 'kategori_artikelController@update')->name('kategori_artikel.update');
+
+route::delete('/kategori_artikel{id}', 'kategori_artikelController@destroy')->name('kategori_artikel.destroy');
+
 
 Route::get('/artikel', 'ArtikelController@index')->name('artikel.index');
 Route::get('/artikel/create', 'ArtikelController@create')->name('artikel.create');

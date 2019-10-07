@@ -26,4 +26,23 @@ class kategori_artikelController extends Controller
       return redirect(route('kategori_artikel.index'));
 
    }
+   public function edit($id){
+      $kategori_artikel=kategori_artikel::find($id);
+
+      if (empty($kategori_artikel)){
+        return redirect(route('kategori_artikel.index'));
+      }
+      return view('kategori_artikel.edit', compact('kategori_artikel'));
+  }
+
+   public function destroy($id){
+      $kategori_artikel=kategori_artikel::find($id);
+
+    if (empty($kategori_artikel)){
+      return redirect(route('kategori_artikel.index'));
+    }
+    $kategori_artikel->delete();
+    return redirect(route('kategori_artikel.index'));
+   }
+
 }
