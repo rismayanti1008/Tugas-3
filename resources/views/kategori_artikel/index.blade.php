@@ -29,6 +29,10 @@
 				
 
                	<a href="{!! route('kategori_artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4196001026d85c574eb537629dade315ad210527
                		 View </a>
                 <a href="{!! route('kategori_artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-success">
                   Edit </a>
@@ -39,6 +43,12 @@
                 {!! Form::close() !!}
 
                   
+<<<<<<< HEAD
+=======
+=======
+               		lihat </a>
+>>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
+>>>>>>> 4196001026d85c574eb537629dade315ad210527
                	</td>
                </tr>
                @endforeach

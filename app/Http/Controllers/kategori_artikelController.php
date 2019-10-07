@@ -26,6 +26,10 @@ class kategori_artikelController extends Controller
       return redirect(route('kategori_artikel.index'));
 
    }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4196001026d85c574eb537629dade315ad210527
    public function edit($id){
       $kategori_artikel=kategori_artikel::find($id);
 
@@ -45,4 +49,9 @@ class kategori_artikelController extends Controller
     return redirect(route('kategori_artikel.index'));
    }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
+>>>>>>> 4196001026d85c574eb537629dade315ad210527
 }
