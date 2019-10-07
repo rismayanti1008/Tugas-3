@@ -29,7 +29,16 @@
 				
 
                	<a href="{!! route('kategori_artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
-               		lihat </a>
+               		 View </a>
+                <a href="{!! route('kategori_artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-success">
+                  Edit </a>
+                {!! Form::open(['route'=>['kategori_artikel.destroy', $item->id],'method'=>'delete']) !!}
+
+                {!! Form::submit('Hapus',['class'=>'btn btn-sn btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini?')"]) !!}
+
+                {!! Form::close() !!}
+
+                  
                	</td>
                </tr>
                @endforeach
