@@ -8,16 +8,16 @@ use App\kategori_artikel;
 class kategori_artikelController extends Controller
 {
     public function index(){
-    	$kategori_artikel=kategori_artikel::all();
-    	return view('kategori_artikel.index', compact('kategori_artikel'));
+      $kategori_artikel=kategori_artikel::all();
+      return view('kategori_artikel.index', compact('kategori_artikel'));
    }
    public function show($id){
-   	$kategori_artikel=kategori_artikel::find($id);
-   	return view('kategori_artikel.show', compact('kategori_artikel'));
+    $kategori_artikel=kategori_artikel::find($id);
+    return view('kategori_artikel.show', compact('kategori_artikel'));
    }
-  
    public function create(){
-    	return view('kategori_artikel.create');
+    $kategori_artikel=kategori_artikel::pluck('nama','id');
+    return view('kategori_artikel.create', compact('kategori_artikel'));
    }
    public function store(Request $request){
       $input= $request->all();
@@ -26,11 +26,7 @@ class kategori_artikelController extends Controller
       return redirect(route('kategori_artikel.index'));
 
    }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4196001026d85c574eb537629dade315ad210527
-   public function edit($id){
+  public function edit($id){
       $kategori_artikel=kategori_artikel::find($id);
 
       if (empty($kategori_artikel)){
@@ -38,9 +34,21 @@ class kategori_artikelController extends Controller
       }
       return view('kategori_artikel.edit', compact('kategori_artikel'));
   }
+  public function update($id,Request $request){
+    $kategori_artikel=kategori_artikel::find($id);
+    $input= $request->all();
 
-   public function destroy($id){
+    if (empty($kategori_artikel)){
+      return redirect(route('kategori_artikel.index'));
+    }
+    $kategori_artikel->update($input);
+    return redirect(route('kategori_artikel.index'));
+
+  }
+
+  public function destroy($id){
       $kategori_artikel=kategori_artikel::find($id);
+
 
     if (empty($kategori_artikel)){
       return redirect(route('kategori_artikel.index'));
@@ -48,10 +56,4 @@ class kategori_artikelController extends Controller
     $kategori_artikel->delete();
     return redirect(route('kategori_artikel.index'));
    }
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
->>>>>>> 4196001026d85c574eb537629dade315ad210527
 }

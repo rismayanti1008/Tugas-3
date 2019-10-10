@@ -13,7 +13,8 @@
         <td>ID</td>
         <td>Judul</td>
         <td>ISI</td>
-        <td>User ID</td>
+        <td>Users Id</td>
+        <td>Kategori Artikel</td>
         <td>Aksi</td>
     </tr>
 
@@ -25,11 +26,19 @@
     <td> {!! $item->judul !!}</td>
     <td> {!! $item->isi!!}</td>
     <td> {!! $item->users_id !!}</td>
+    <td> {!! $item->kategori_artikel_id!!}</td>
 
     <td>
         <a href="{!! route('artikel.show',[$item->id]) !!}" class="btn btn-success">
-            Lihat
+        View
         </a>
+        <a href="{!! route('artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+        Edit </a>
+                {!! Form::open(['route'=>['artikel.destroy', $item->id],'method'=>'delete']) !!}
+
+                {!! Form::submit('Hapus',['class'=>'btn btn-sn btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini?')"]) !!}
+
+                {!! Form::close() !!}
 </tr>
 @endforeach
 

@@ -4,9 +4,9 @@
     <label for="judul" class="col-md-2 col form-label text-md-right">{{__('judul')}}</label>
 
     <div class="col-md-10">
-    <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required autofocus>
-
+    {!! Form::text('judul', null, ['class'=>"form-control",'required', 'autofocus']); !!}
     @error('judul')
+    
     <span class="invalid-feedback" role="alert">
         <strong>{{ $massege }}</strong>
 

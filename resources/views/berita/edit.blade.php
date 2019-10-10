@@ -4,11 +4,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
               <div class=card>
-               <div class="card-header">tambah kategori artikel</div>
+               <div class="card-header">Tambah Berita</div>
                <div class="card-body">
 
-               {!! Form::model($kategori_artikel, ['route' => ['kategori_artikel.update', $kategori_artikel->id], 'method'=>'patch']) !!}
-               		@include('kategori_artikel.form')
+               {!! Form::model($berita, ['route' => ['berita.update', $berita->id], 'method'=>'patch']) !!}
+               		@include('berita.form')
                 {!! Form::close() !!}
                
                 </form>

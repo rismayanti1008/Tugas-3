@@ -7,13 +7,14 @@
                <div class="card-header">"List Kategori artikel"</div>
                
                <div class="card-body">
-<a href="{!! route('berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+<a href="{!! route('kategori_artikel.create') !!}" class="btn btn-success">Tambah Data</a>
 <table border="2">
-               	<tr>
-               		<td>id</td>
-               		<td>nama</td>
-               		<td>users id</td>
-               		<td>create</td>
+               	<tr bgcolor='khaki' align="center"> 
+               		<td>ID</td>
+               		<td>Nama</td>
+               		<td>Users id</td>
+               		<td>Create</td>
+                  <td>Update</td>
                		<td>Aksi</td>
 
                		
@@ -24,17 +25,14 @@
 					     <td>{!! $item->nama !!}</td>
 					     <td>{!! $item->users_id!!}</td>}
 					     <td>{!! $item->created_at !!}</td>
+               <td>{!! $item->updated_at !!}</td>
 					     <td>
 
 				
 
                	<a href="{!! route('kategori_artikel.show',[$item->id]) !!}" class="btn btn-sm btn-success">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4196001026d85c574eb537629dade315ad210527
                		 View </a>
-                <a href="{!! route('kategori_artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-success">
+                <a href="{!! route('kategori_artikel.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
                   Edit </a>
                 {!! Form::open(['route'=>['kategori_artikel.destroy', $item->id],'method'=>'delete']) !!}
 
@@ -42,13 +40,6 @@
 
                 {!! Form::close() !!}
 
-                  
-<<<<<<< HEAD
-=======
-=======
-               		lihat </a>
->>>>>>> e91e0a425a169fd11bed46112613feb8d61afefb
->>>>>>> 4196001026d85c574eb537629dade315ad210527
                	</td>
                </tr>
                @endforeach

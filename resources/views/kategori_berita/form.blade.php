@@ -3,7 +3,7 @@
         <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
         <div class="col-md-4">
-            <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
+            {!! Form::text('nama', null, ['class'=>"form-control",'required', 'autofocus']); !!}
             @error('nama')
 
            <span class="invalid-feedback" role="alert">
@@ -24,9 +24,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Simpan Data') }}
                                 </button>
-                                <button
+                               
                                 <a href="{!! route('kategori_artikel.index') !!}"class="btn btn-danger">
-                                    {{ __('Batal') }}</a>
+                                    {{ __('Batal') }}
+                                </a>
                                
                             </div>
                         </div>
